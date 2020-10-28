@@ -70,4 +70,9 @@ class person:
 
 dude = person()
 
-dude.corps.lost_limb("arm","right")
+dude.prenom = "Jacques"
+dude.nom = "Marboeuf"
+
+print(f"Hello {dude.prenom} {dude.nom}")
+dude.corps.check_arms()
+dude.corps.check_leg()

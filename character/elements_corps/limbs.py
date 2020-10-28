@@ -55,7 +55,6 @@ class limbs():
     def categ(self):
         return self.__cat
 
-
     # setter
     @limb_exist.setter
     def limb_exist(self, value):

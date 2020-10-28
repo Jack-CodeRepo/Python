@@ -39,59 +39,33 @@ import elements_corps.limbs as limbs
 class corps():
     def __init__(self):
         self.right_arm = limbs.limbs("arm", "right")
+        self.left_arm = limbs.limbs("arm", "right")
+        self.right_leg = limbs.limbs("leg", "right")
+        self.left_leg = limbs.limbs("leg", "right")
 
 
-    def lost_limb(self, limbs, sides):
-        sides_list = sides.split(",")
-        limb_list = limbs.split(",")
-        for limb in limb_list:
-            for side in sides_list:
-
-                # je veux que cet attribut soit recup automatiquement avc "side" et "limb"
-                self.side_limb.limb_exist = False
-
-
-
-
-    #     self.rightArm = ub.arms("right")
-    #     self.leftArm = ub.arms("left")
-
-    #     self.rightLeg = lb.legs("right")
-    #     self.leftLeg = lb.legs("left")
+    def check_arms(self):
+        if not self.right_arm.limb_exist:
+            print("Right arm is dead")
+        elif not self.left_arm.limb_exist:
+            print("Left arm is dead")
+        elif not self.right_arm.limb_exist and not self.left_arm.limb_exist:
+            print("Both arms are dead")
+        else:
+            print("All you arms are great")
 
 
-    # def lost_limb(self, limb, sides):
-    #     sides_list = sides.split(",")
-    #     if limb == "arm":
-    #         for side in sides_list:
-    #             self.lost_arm(side)
-
-    # def lost_arm(self, side):
-    #     if side == "right":
-    #         self.rightLeg.leg_exist = False
-    #     if side == "left":
-    #         self.leftLeg.leg_exist = False
-
-    # def lost_leg(self, side):
-    #     if side == "right":
-    #         self.rightArm.arm_exist = False
-    #     if side == "left":
-    #         self.leftArm.arm_exist = False
-
-
-    # def check_limb(self):
-    #     print(f"Le cote {self.rightArm.arm_side} est {self.rightArm.arm_exist}")
-    #     print(f"Le cote  {self.leftArm.arm_side} est {self.leftArm.arm_exist}")
-    #     print(f"Le cote  {self.rightLeg.leg_side} est {self.rightLeg.leg_exist}")
-    #     print(f"Le cote  {self.leftLeg.leg_side} est {self.leftLeg.leg_exist}")
-
-
-
-
+    def check_leg(self):
+        if not self.right_leg.limb_exist:
+            print("Right arm is dead")
+        elif not self.left_leg.limb_exist:
+            print("Left arm is dead")
+        elif not self.right_leg.limb_exist and not self.left_leg.limb_exist:
+            print("Both arms are dead")
+        else:
+            print("All you arms are great")
 
 
 # ==================================================================================================
 #   SCRIPT
 # ==================================================================================================
-
-corps()
