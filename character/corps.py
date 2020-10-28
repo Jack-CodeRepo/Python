@@ -46,7 +46,9 @@ class corps():
         limb_list = limbs.split(",")
         for limb in limb_list:
             for side in sides_list:
-                self.${side}_${limb}.limb_exist" = False
+
+                # je veux que cet attribut soit recup automatiquement avc "side" et "limb"
+                self.side_limb.limb_exist = False
 
 
 
