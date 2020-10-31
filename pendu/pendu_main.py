@@ -15,7 +15,7 @@ import configparser
 import os
 import random
 import time
-
+from pathlib import Path
 
 # import liste
 from lists import words
@@ -36,9 +36,9 @@ import classes.interface.display
 # ==================================================================================================
 
 # fichier de sauvegarde
-save_file = "misc/save_file.txt"
+save_file = path = Path(__file__).parent / "./misc/save_file.txt"
 # fichier de conf
-conf_file = "misc/pendu.conf"
+conf_file = Path(__file__).parent / "./misc/pendu.conf"
 # attribution de la liste des mots à deviner en variable
 words_list = words.MHWI
 
@@ -106,7 +106,7 @@ def add_player(name):
         :type name: str
     """
 
-    check_empty_file = os.stat(save_file).st_size == 0
+    check_empty_file = save_file.stat().st_size == 0
     name = name
     if check_empty_file:
         with open(save_file, 'a') as fichier:
@@ -445,8 +445,7 @@ class interface_main(tk.Frame):
 #   SCRIPT
 # ==================================================================================================
 root = tk.Tk()
-
-save_file = get_config_element("FILES", "save_file")
+modify_conf("FILES", "save_file", f"\"{save_file}\"")
 menu = classes.interface.menu_bar.class_menu_bar()
 
 
