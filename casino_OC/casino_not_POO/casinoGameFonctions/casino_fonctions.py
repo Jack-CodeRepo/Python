@@ -27,6 +27,13 @@ money = 0
 
 
 def Pick_Money():
+    """[summary]
+
+    Returns
+    -------
+    [type]
+        [description]
+    """
     print("Vous decidez de sortir et de prendre de l'argent.")
     money = -1
     while money <=0 or money > 100:
@@ -51,6 +58,13 @@ def Pick_Money():
 
 
 def chiffreMiser():
+    """[summary]
+
+    Returns
+    -------
+    [type]
+        [description]
+    """
     chiffreMise = -1
     while chiffreMise == -1:
         chiffreMise = input("Saisissez le chiffre sur lequel vous misez: ")
@@ -67,6 +81,18 @@ def chiffreMiser():
 
 
 def montantMiser(money):
+    """[summary]
+
+    Parameters
+    ----------
+    money : [type]
+        [description]
+
+    Returns
+    -------
+    [type]
+        [description]
+    """
     mise = -1
     while mise == -1:
         mise = input("Saisissez le montant à miser: ")
@@ -86,6 +112,13 @@ def montantMiser(money):
 
 
 def casino(money):
+    """[summary]
+
+    Parameters
+    ----------
+    money : [type]
+        [description]
+    """
     money = money
     time.sleep(3)
     print("Vous voilà au casino.")

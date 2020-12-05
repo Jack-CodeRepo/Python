@@ -14,6 +14,13 @@ class roulette:
     """
     """
     def __init__(self, case):
+        """[summary]
+
+        Parameters
+        ----------
+        case : [type]
+            [description]
+        """
         self.case = int(case)
 
     def get_amnt(self):

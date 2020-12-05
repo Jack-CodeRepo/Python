@@ -34,6 +34,13 @@ chemin_complet_fichier = None
 # ==================================================================================================
 
 def init_config():
+    """[summary]
+
+    Returns
+    -------
+    [type]
+        [description]
+    """
     config = configparser.ConfigParser()
     config.read("log_explorer.conf")
     folder = config.get("EXPLORER", "default_path")
@@ -43,6 +50,20 @@ def init_config():
 
 
 def open_file(defaut_folder=None, default_file=None):
+    """[summary]
+
+    Parameters
+    ----------
+    defaut_folder : [type], optional
+        [description], by default None
+    default_file : [type], optional
+        [description], by default None
+
+    Returns
+    -------
+    [type]
+        [description]
+    """
     if not defaut_folder:
         defaut_folder = chemin_exploreur_defaut
 
@@ -59,6 +80,17 @@ def open_file(defaut_folder=None, default_file=None):
     return path_to_file
 
 def modify_conf(section, option, value):
+    """[summary]
+
+    Parameters
+    ----------
+    section : [type]
+        [description]
+    option : [type]
+        [description]
+    value : [type]
+        [description]
+    """
     config = configparser.ConfigParser()
     config.read("configuration.conf")
     config.set(section, option, value)
@@ -83,6 +115,13 @@ def quitter():
 
 class interface_main(tk.Frame):
     def __init__(self, parent):
+        """[summary]
+
+        Parameters
+        ----------
+        parent : [type]
+            [description]
+        """
         tk.Frame.__init__(self)
         self.string_searched = saisie(parent, 0, 0, "recherche:")
         self.output = output_display(parent, 3, 0, 125, 20).get_text()
@@ -110,6 +149,13 @@ class interface_main(tk.Frame):
 
 
     def display(self, liste):
+        """[summary]
+
+        Parameters
+        ----------
+        liste : [type]
+            [description]
+        """
         self.output.config(state=tk.NORMAL, font="Calibri")
         self.output.delete('1.0', tk.END)
         for l in liste:
@@ -138,6 +184,19 @@ class saisie(tk.Entry):
         label: nom de la zone saisie, positionne à gauche de la zone
     '''
     def __init__(self, parent, xRow, yCol, label=None):
+        """[summary]
+
+        Parameters
+        ----------
+        parent : [type]
+            [description]
+        xRow : [type]
+            [description]
+        yCol : [type]
+            [description]
+        label : [type], optional
+            [description], by default None
+        """
         tk.Entry.__init__(self)
         self.xRow = xRow
         self.yCol = yCol
@@ -178,6 +237,21 @@ class output_display(tk.Text):
 
     '''
     def __init__(self, parent, xRow, yCol, w, h):
+        """[summary]
+
+        Parameters
+        ----------
+        parent : [type]
+            [description]
+        xRow : [type]
+            [description]
+        yCol : [type]
+            [description]
+        w : [type]
+            [description]
+        h : [type]
+            [description]
+        """
         tk.Text.__init__(self)
         self.xRow = xRow
         self.yCol = yCol
